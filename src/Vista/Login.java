@@ -1,23 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista;
+
+import Modelo.LoginDAO;
+import Modelo.login;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author marolo
  */
 public class Login extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Login
-     */
+    login lg = new login();
+    LoginDAO login = new LoginDAO();
+            
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);  //Poner en centro
     }
 
+    public void validar() {
+        String correo = txtCorreo.getText();
+        String pass = String.valueOf(txtPass.getPassword());
+        if(!"".equals(correo) || !"".equals(pass)) {        
+            lg = login.log(correo, pass);
+            if(lg.getCorreo()!=null && lg.getPass()!=null) {
+                Sistema sis = new Sistema();
+                sis.setVisible(true);
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Correo o la contraseña incorrecta");
+            }
+        }
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -213,7 +229,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCorreoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        validar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

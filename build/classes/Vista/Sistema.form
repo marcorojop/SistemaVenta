@@ -277,10 +277,12 @@
                                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="txtPrecioVenta" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtStockDisponible" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtIdPro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="txtStockDisponible" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtIdPro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Component id="btnEliminarVenta" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
@@ -721,6 +723,9 @@
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarClienteActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEditarCliente">
               <Properties>
